@@ -19,8 +19,8 @@ header {
 
 .logo {
     position: absolute;
-    right: 65%;
-    bottom: 89.5%;
+    right: 66.5%;
+    bottom: 93.5%;
 }
 
 .logo>img {
@@ -46,46 +46,13 @@ header {
 }
 
 .navigation {
-    position: absolute;
-    width: 0px;
-    height: 0vh;
-    border: 1px solid #000;
-    top: 120%;
-    border-radius: 10px;
-    transition: 0.30s;
-    left: -3700%;
-    visibility: hidden;
-    opacity: 0;
-}
-
-.navigation>img {
-    position: absolute;
-    width: 10%;
-    height: 10%;
-    margin-right: 75%;
-    margin-top: 5%;
-}
-
-.navigation>a {
-    margin: 5% 0%;
-}
-
-a {
-    position: absolute;
-    text-decoration: none;
-    color: #000;
-    font-size: 16px;
-    font-weight: 600;
-    left: 5%;
-
-}
-
-span {
-    position: absolute;
-    left: 10%;
-    top: 13%;
-    font-size: 14px;
-    font-weight: 300;
+   width: 230px;
+   height: 595px;
+   border: 1px solid #000;
+   position: relative;
+   right: 1148px;
+   bottom: 20px;
+   border-radius: 0px 20px 20px 0px;
 }
 
 a:hover {
@@ -116,26 +83,11 @@ a:hover {
 .user-img>img {
 
     position: relative;
-    right: 3950%;
+    right: 4050%;
     cursor: pointer;
     width: 170%;
-    bottom: 25%;
+    bottom: 120%;
 }
-
-.user-img>img:hover+.navigation {
-    visibility: visible;
-    opacity: 1;
-    height: 50vh;
-    width: 300px;
-}
-
-.navigation:hover {
-    visibility: visible;
-    opacity: 1;
-    height: 50vh;
-    width: 300px;
-}
-
 .user-img>img:hover {
     animation: rebote 0.5s alternate infinite ease-in;
 
