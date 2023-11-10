@@ -10,8 +10,8 @@ let cambiarFoto = () => {
     let fotos = document.querySelectorAll(".gallery-items");
     fotos.forEach((foto, i) => {
         foto.style.opacity = i === index ? 1 : 0.4;
-        foto.style.height = i === index ? '230px' : '200px';
-        foto.style.width = i === index ? '230px' : '200px';
+        foto.style.height = i === index ? '200px' : '170px';
+        foto.style.width = i === index ? '200px' : '170px';
         foto.style.boxShadow = i === index ? '-2px 5px 33px 6px rgba(0,0,0,0.35)' : 'none';
     });
 }
