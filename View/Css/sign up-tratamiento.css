@@ -44,7 +44,7 @@ form>label {
 
 .form {
     position: relative;
-    left:20% ;
+    left: 20%;
 }
 
 .div {
@@ -60,25 +60,32 @@ form>label {
     padding-top: 20px;
     border: 0px;
     outline: 0px;
-    border-bottom: 1px solid #DDDDDE;
+    border-bottom: 1px solid rgb(38, 166, 154);
+    ;
 }
 
 .div>.lbl-id {
     position: absolute;
-    right: 82.5%;
+    right: 87.6%;
     top: 24%;
     transition: 0.25s;
     color: #757575;
     font-size: 18px;
+    color: rgb(38, 166, 154);
+
 }
-.div>.lbl-email {
+
+.div>.lbl-date {
     position: absolute;
-    right: 95.5%;
+    right: 92.3%;
     top: 24%;
     transition: 0.25s;
     color: #757575;
     font-size: 18px;
+    color: rgb(38, 166, 154);
+
 }
+
 .div>.lbl {
     position: absolute;
     right: 94%;
@@ -86,73 +93,104 @@ form>label {
     transition: 0.25s;
     color: #757575;
     font-size: 18px;
+    color: rgb(38, 166, 154);
 
 }
-
-.div>.lbl-apellido {
-    position: absolute;
-    right: 93.7%;
-    top: 24%;
-    transition: 0.25s;
-    color: #757575;
-    font-size: 18px;
-}
-
-.div>.lbl-edad {
-    position: absolute;
-    right: 95.7%;
-    top: 24%;
-    transition: 0.25s;
-    color: #757575;
-    font-size: 18px;
-}
-
 
 .div>.lbl-fecha {
     position: absolute;
-    right: 85.5%;
+    right: 89.7%;
     top: 24%;
     transition: 0.25s;
     color: #757575;
     font-size: 18px;
+    color: rgb(38, 166, 154);
+
 }
-#input-date{
+
+.div>.lbl-dosificacion {
+    position: absolute;
+    right: 91.5%;
+    top: 24%;
+    transition: 0.25s;
+    color: #757575;
+    font-size: 18px;
+    color: rgb(38, 166, 154);
+
+}
+
+.div>.lbl-descripcion {
+    position: absolute;
+    right: 91.7%;
+    top: 24%;
+    transition: 0.25s;
+    color: #757575;
+    font-size: 18px;
+    color: rgb(38, 166, 154);
+
+}
+
+#input-date,
+#input2-date {
     position: relative;
-    width: 10%;
-    left: 15%;
+    width: 15%;
+    left: 11%;
     bottom: 8px;
-}
-form input:focus+.lbl-email, form input:valid + .lbl-email {
-    transform: translateY(-150%);
-    right: 97%;
-    font-size: 14px;
+    color: rgb(38, 166, 154);
+    transition: .3s;
 }
 
-form input:focus+.lbl, form input:valid + .lbl {
-    transform: translateY(-150%);
-    right: 96%;
+form input:focus+.lbl-date,
+form input:valid+.lbl-date {
+    right: 94.1%;
     font-size: 14px;
+    color: rgb(38, 166, 154);
+
 }
 
-form input:focus+.lbl-edad, form input:valid + .lbl-edad {
-    transform: translateY(-150%);
-    right: 97%;
-    font-size: 14px;
-}
-
-form input:focus+.lbl-apellido, form input:valid + .lbl-apellido {
+form input:focus+.lbl,
+form input:valid+.lbl {
     transform: translateY(-150%);
     right: 95.5%;
     font-size: 14px;
+    color: rgb(38, 166, 154);
+
 }
 
-form input:focus+.lbl-id, form input:valid + .lbl-id {
+form input:focus+.lbl-dosificacion,
+form input:valid+.lbl-dosificacion {
     transform: translateY(-150%);
-    right: 86.5%;
+    right: 93.5%;
+    font-size: 14px;
+    color: rgb(38, 166, 154);
+
+}
+
+form input:focus+.lbl-fecha,
+form input:valid+.lbl-fecha {
+    right: 92%;
+    font-size: 14px;
+    color: rgb(38, 166, 154);
+
+}
+
+form input:focus+.lbl-id,
+form input:valid+.lbl-id {
+    transform: translateY(-150%);
+    right: 90.5%;
+    font-size: 14px;
+    color: rgb(38, 166, 154);
+
+}
+
+form input:focus+.lbl-descripcion,
+form input:valid+.lbl-descripcion {
+    transform: translateY(-150%);
+    right: 93.5%;
     font-size: 14px;
 }
 
-.line{
+.line {
     position: absolute;
     width: 0px;
     height: 350px;
@@ -160,16 +198,18 @@ form input:focus+.lbl-id, form input:valid + .lbl-id {
     left: 30%;
     bottom: 40px;
 }
-.circle{
+
+.circle {
     position: absolute;
     width: 10px;
     height: 10px;
-    border: 1px solid #DDDDDE; 
+    border: 1px solid #DDDDDE;
     border-radius: 60px;
     left: 29.6%;
     bottom: 200px;
 }
-.line2{
+
+.line2 {
     position: absolute;
     width: 0px;
     height: 150px;
@@ -178,7 +218,7 @@ form input:focus+.lbl-id, form input:valid + .lbl-id {
     top: 152px;
 }
 
-.linkFace{
+.linkFace {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -192,7 +232,8 @@ form input:focus+.lbl-id, form input:valid + .lbl-id {
     border-radius: 60px;
 
 }
-.linkFace>a{
+
+.linkFace>a {
     position: relative;
     bottom: 5px;
     color: #000;
@@ -202,13 +243,13 @@ form input:focus+.lbl-id, form input:valid + .lbl-id {
 
 }
 
-.linkFace>a>img{
-   position: relative;
-   top:7px;
-   right: 30px;
+.linkFace>a>img {
+    position: relative;
+    top: 7px;
+    right: 30px;
 }
 
-.google{
+.google {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -221,7 +262,8 @@ form input:focus+.lbl-id, form input:valid + .lbl-id {
     bottom: 30%;
     border-radius: 60px;
 }
-.google>a{
+
+.google>a {
     position: relative;
     bottom: 5px;
     color: #000;
@@ -231,12 +273,13 @@ form input:focus+.lbl-id, form input:valid + .lbl-id {
 
 }
 
-.google>a>img{
-   position: relative;
-   top:7px;
-   right: 40px;
+.google>a>img {
+    position: relative;
+    top: 7px;
+    right: 40px;
 }
-form>button[type = "submit"]{
+
+form>button[type="submit"] {
     position: absolute;
     width: 160px;
     height: 40px;
@@ -248,7 +291,8 @@ form>button[type = "submit"]{
     font-size: 15px;
     transition: 0.3s;
 }
-form>button[type = "submit"]:hover{
+
+form>button[type="submit"]:hover {
     background-color: #116dff;
     color: #fff;
 }
