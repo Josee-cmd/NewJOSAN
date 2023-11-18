@@ -1,6 +1,10 @@
 let index = 1;
 const cantidadFotos = document.querySelectorAll(".gallery-items").length;
-
+const services = document.querySelector('#services'),
+    submenus = document.querySelector('.submenus'),
+    sub = document.querySelector('#sub'),
+    menu = document.querySelector('#menu'),
+    navigation = document.querySelector('.navigation');
 function mostrarFotos(n) {
     index = (index + n + cantidadFotos) % cantidadFotos;
     console.log(index)
@@ -21,3 +25,20 @@ let campana = document.querySelector('#campana');
 campana.addEventListener("click", () => {
     campana.style.animation = 'vibrarCampana 0.3s alternate infinite ease-in';
 })
+
+services.addEventListener('click',()=>{
+    sub.style.transform = 'rotate(90deg)';
+    submenus.classList.add('show')
+})
+
+menu.addEventListener('click',aparecer)
+
+
+function aparecer(){
+    if(true){
+        navigation.classList.add('showNavigation');
+
+    }else{
+        remove
+    }
+}

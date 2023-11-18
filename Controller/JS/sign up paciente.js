@@ -1,10 +1,9 @@
-document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.datepicker');
-    var instances = M.Datepicker.init(elems, options);
-  });
+const datepicker = document.querySelector('.datepicker'),
+  lbl = document.querySelector('.lbl-fecha')
 
-  // Or with jQuery
 
-  $(document).ready(function(){
-    $('.datepicker').datepicker();
-  });
+datepicker.addEventListener('change', () => {
+  lbl.style.transform = 'translateY(-150%)';
+  datepicker.style.transform = 'translateX(-144%)';
+  datepicker.style.color = 'rgb(38, 166, 154)';
+});

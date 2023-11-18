@@ -188,7 +188,7 @@ form input:valid+.lbl-descripcion {
     position: absolute;
     width: 0px;
     height: 350px;
-    border: 1px solid #DDDDDE;
+    border: 1px solid rgb(38, 166, 154);
     left: 30%;
     bottom: 40px;
 }
@@ -197,19 +197,20 @@ form input:valid+.lbl-descripcion {
     position: absolute;
     width: 10px;
     height: 10px;
-    border: 1px solid #DDDDDE;
+    border: 2px solid rgb(38, 166, 154);
     border-radius: 60px;
-    left: 29.6%;
+    left: 29.5%;
     bottom: 200px;
+    background-color: #fff;
 }
 
 .line2 {
     position: absolute;
     width: 0px;
     height: 150px;
-    border: 1px solid #DDDDDE;
+    border: 1px solid rgb(38, 166, 154);
     left: 30%;
-    top: 152px;
+    top: 52px;
 }
 
 .linkFace {

@@ -44,7 +44,7 @@ form>label {
 
 .form {
     position: relative;
-    left:20% ;
+    left: 20%;
 }
 
 .div {
@@ -60,7 +60,8 @@ form>label {
     padding-top: 20px;
     border: 0px;
     outline: 0px;
-    border-bottom: 1px solid #DDDDDE;
+    border-bottom: 1px solid rgb(38, 166, 154);
+    ;
 }
 
 .div>.lbl-id {
@@ -71,6 +72,7 @@ form>label {
     color: #757575;
     font-size: 18px;
 }
+
 .div>.lbl-email {
     position: absolute;
     right: 95.5%;
@@ -79,6 +81,7 @@ form>label {
     color: #757575;
     font-size: 18px;
 }
+
 .div>.lbl {
     position: absolute;
     right: 94%;
@@ -116,69 +119,97 @@ form>label {
     color: #757575;
     font-size: 18px;
 }
-#input-date{
+
+#input-date {
     position: relative;
     width: 10%;
     left: 15%;
     bottom: 8px;
+    transition: .3s;
 }
-form input:focus+.lbl-email, form input:valid + .lbl-email {
+
+form input:focus+.lbl-email,
+form input:valid+.lbl-email {
     transform: translateY(-150%);
     right: 97%;
     font-size: 14px;
+    color: rgb(38, 166, 154);
+
 }
 
-form input:focus+.lbl, form input:valid + .lbl {
+form input:focus+.lbl,
+form input:valid+.lbl {
     transform: translateY(-150%);
     right: 96%;
     font-size: 14px;
+    color: rgb(38, 166, 154);
+
 }
 
-form input:focus+.lbl-edad, form input:valid + .lbl-edad {
+form input:focus+.lbl-edad,
+form input:valid+.lbl-edad {
     transform: translateY(-150%);
     right: 97%;
     font-size: 14px;
+    color: rgb(38, 166, 154);
+
 }
 
-form input:focus+.lbl-apellido, form input:valid + .lbl-apellido {
+form input:focus+.lbl-apellido,
+form input:valid+.lbl-apellido {
     transform: translateY(-150%);
     right: 95.5%;
     font-size: 14px;
+    color: rgb(38, 166, 154);
+
 }
 
-form input:focus+.lbl-id, form input:valid + .lbl-id {
+form #input-date:focus+.lbl-fecha,
+form #input-date:valid+.lbl-fecha {
+    right: 89%;
+    font-size: 14px;
+    color: rgb(38, 166, 154);
+
+}
+
+form input:focus+.lbl-id,
+form input:valid+.lbl-id {
     transform: translateY(-150%);
     right: 86.5%;
     font-size: 14px;
+    color: rgb(38, 166, 154);
+
 }
 
-.line{
-    position: absolute;
-    width: 0px;
-    height: 350px;
-    border: 1px solid #DDDDDE;
-    left: 30%;
-    bottom: 40px;
-}
-.circle{
-    position: absolute;
-    width: 10px;
-    height: 10px;
-    border: 1px solid #DDDDDE; 
-    border-radius: 60px;
-    left: 29.6%;
-    bottom: 200px;
-}
-.line2{
+.line {
     position: absolute;
     width: 0px;
     height: 150px;
-    border: 1px solid #DDDDDE;
+    border: 1px solid rgb(38, 166, 154);;
     left: 30%;
-    top: 152px;
+    bottom: 50px;
 }
 
-.linkFace{
+.circle {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border: 2px solid rgb(38, 166, 154);
+    border-radius: 60px;
+    left: 29.5%;
+    bottom: 200px;
+}
+
+.line2 {
+    position: absolute;
+    width: 0px;
+    height: 150px;
+    border: 1px solid rgb(38, 166, 154);
+    left: 30%;
+    top: 63px;
+}
+
+.linkFace {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -192,7 +223,8 @@ form input:focus+.lbl-id, form input:valid + .lbl-id {
     border-radius: 60px;
 
 }
-.linkFace>a{
+
+.linkFace>a {
     position: relative;
     bottom: 5px;
     color: #000;
@@ -202,13 +234,13 @@ form input:focus+.lbl-id, form input:valid + .lbl-id {
 
 }
 
-.linkFace>a>img{
-   position: relative;
-   top:7px;
-   right: 30px;
+.linkFace>a>img {
+    position: relative;
+    top: 7px;
+    right: 30px;
 }
 
-.google{
+.google {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -221,7 +253,8 @@ form input:focus+.lbl-id, form input:valid + .lbl-id {
     bottom: 30%;
     border-radius: 60px;
 }
-.google>a{
+
+.google>a {
     position: relative;
     bottom: 5px;
     color: #000;
@@ -231,12 +264,13 @@ form input:focus+.lbl-id, form input:valid + .lbl-id {
 
 }
 
-.google>a>img{
-   position: relative;
-   top:7px;
-   right: 40px;
+.google>a>img {
+    position: relative;
+    top: 7px;
+    right: 40px;
 }
-form>button[type = "submit"]{
+
+form>button[type="submit"] {
     position: absolute;
     width: 160px;
     height: 40px;
@@ -248,7 +282,8 @@ form>button[type = "submit"]{
     font-size: 15px;
     transition: 0.3s;
 }
-form>button[type = "submit"]:hover{
+
+form>button[type="submit"]:hover {
     background-color: #116dff;
     color: #fff;
 }
