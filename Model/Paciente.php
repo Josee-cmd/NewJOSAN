@@ -10,7 +10,6 @@ class Paciente extends usuarios
     private string $telefono;
     private int $edad;
     private DateTime $fecha;
-
     // Constructor que puede recibir parámetros para inicializar los atributos
     public function __construct(int $id, string $password, bool $loginStatus, DateTime $dia, int $idPaciente, string $nombre, string $apellido, string $email, string $telefono, int $edad, DateTime $fecha)
     {
