@@ -26,19 +26,15 @@ campana.addEventListener("click", () => {
     campana.style.animation = 'vibrarCampana 0.3s alternate infinite ease-in';
 })
 
-services.addEventListener('click',()=>{
-    sub.style.transform = 'rotate(90deg)';
-    submenus.classList.add('show')
-})
-
-menu.addEventListener('click',aparecer)
-
-
-function aparecer(){
-    if(true){
-        navigation.classList.add('showNavigation');
-
-    }else{
-        remove
+services.addEventListener('click', () => {
+    let op = submenus.classList.toggle('show')
+    if (op) {
+        sub.style.transform = 'rotate(90deg)';
+    } else {
+        sub.style.transform = 'rotate(0deg)';
     }
-}
+});
+
+menu.addEventListener('click', () => {
+    navigation.classList.toggle('showNavigation')
+})
