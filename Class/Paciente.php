@@ -1,7 +1,7 @@
 <?php
-require_once "user.php";
-class Paciente extends usuarios
-{
+    //Clase de la conexion incluida
+    include_once("Conexion.php");
+class Paciente {
     //Atributos que contiene la clase "Paciente"
     private int $Id_paciente;
     private string $nombre;
@@ -10,12 +10,12 @@ class Paciente extends usuarios
     private string $telefono;
     private int $edad;
     private DateTime $fecha;
+    private $con;
     // Constructor que puede recibir parámetros para inicializar los atributos
-    public function __construct(int $id, string $password, bool $loginStatus, DateTime $dia, string $rol,int $idPaciente, string $nombre, string $apellido, string $email, string $telefono, int $edad, DateTime $fecha)
+    public function __construct($IdPaceinte,$nombre,$apellido,$email,$telefono,$edad, $fecha)
     {
-        //Llamar al constructor de la clase base (Usuarios)
-        parent::__construct($id, $password, $loginStatus, $dia,$rol);
-        $this->Id_paciente = $idPaciente;
+        $this->con = new Conexion();
+        $this->Id_paciente = $IdPaceinte;
         $this->nombre = $nombre;
         $this->apellido = $apellido;
         $this->email = $email;
@@ -117,9 +117,6 @@ class Paciente extends usuarios
 
     public function __MostrarDatos(): void
     {
-        // Llamamos al método de la clase base (usuarios)
-        echo 'Datos de la clase Usuario' . "<br><br>";
-        parent::__MostrarDatos();
         // Imprimir los datos específicos de la clase Paciente
         echo "<br><br>" . 'Datos de la clase Paciente' . "<br><br>";
         echo $this->Id_paciente . " " . "<br>" .
@@ -134,7 +131,7 @@ class Paciente extends usuarios
 //Inicializar con la fecha y hora actual
 $fechaEspecifica = new DateTime('2023-11-19 12:30:00');
 // Crear una instancia de la clase Paciente
-$nuevoPaciente = new Paciente(1, "contrasena", true, new DateTime(), "Paciente",1, "Jose", "Salcedo", "josesslcedo", "3043059", 20, $fechaEspecifica);
+$nuevoPaciente = new Paciente( 1, "Jose", "Salcedo", "josesslcedo", "3043059", 20, $fechaEspecifica);
 
 //Mostramos todos los datos instanciados de la clase "Paciente"
 echo $nuevoPaciente->__MostrarDatos();

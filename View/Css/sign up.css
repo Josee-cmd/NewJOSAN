@@ -99,7 +99,14 @@ form>label {
     color: #757575;
     font-size: 18px;
 }
-
+.div>.lbl-rol {
+    position: absolute;
+    right: 85.2%;
+    top: 24%;
+    transition: 0.25s;
+    color: #757575;
+    font-size: 18px;
+}
 form input:focus+.lbl-email, form input:valid + .lbl-email {
     transform: translateY(-150%);
     right: 97%;
@@ -121,6 +128,11 @@ form input:focus+.lbl-password, form input:valid + .lbl-password {
 form input:focus+.lbl-passwordAgain, form input:valid + .lbl-passwordAgain {
     transform: translateY(-150%);
     right: 84.5%;
+    font-size: 14px;
+}
+form input:focus+.lbl-rol, form input:valid + .lbl-rol {
+    transform: translateY(-150%);
+    right: 88.9%;
     font-size: 14px;
 }
 

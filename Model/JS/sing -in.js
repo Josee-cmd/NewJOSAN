@@ -1,5 +1,5 @@
 let btton = document.querySelector("#next");
 
 btton.addEventListener("click",()=>{
-  location.href = "../View/personal area.html";  
+  location.href = "../View/personal area.php";  
 })
