@@ -3,9 +3,9 @@ include_once("Conexion.php");
 class usuarios
 {
     //Atributos de la clase Usuario
-    private int $IdUsuario;
-    private string $password;
+    private string $IdUsuario;
     private string $nombre;
+    private string $password;
     private bool $loginStatus;
     private string $dia;
 
@@ -18,7 +18,7 @@ class usuarios
     }
 
     // Getter para obtener el valor de los atributos de la clase "usuarios"
-    public function __getId(): int
+    public function __getId(): string
     {
         return $this->IdUsuario;
     }
@@ -41,7 +41,7 @@ class usuarios
     }
 
     //Setter para modificar el valore de los atributos de la clase "usuarios"
-    public function __setID(int $id): void
+    public function __setID(string $id): void
     {
         $this->IdUsuario = $id;
     }
@@ -82,6 +82,39 @@ class usuarios
             //El id del usuario ya se encuentra en el sistema
             echo "Este usuario ya se encuentra en el sistema";
         }
+    }
+
+    public function show(){
+        $sql = "SELECT * FROM `usuarios` WHERE  userId = '{$this->__getId()}'";
+        $resultado = $this->con->consultaRetorno($sql);
+    
+        // Check if the query was successful
+        if ($resultado) {
+            $row = mysqli_fetch_assoc($resultado);
+            $this->IdUsuario = $row['userId'];
+            $this->nombre = $row['nombreUser'];
+            $this->password = $row['password'];
+            $this->loginStatus = $row['loginStatus'];
+            $this->dia = $row['registerDate'];
+            // Process the $row data as needed
+    
+            // Free the result set
+            mysqli_free_result($resultado);
+        } else {
+            // Handle the error, if any
+            echo "Error: ";
+        }
+    }
+
+    public function Update(){
+        $sql = "UPDATE `usuarios` SET `nombreUser`='{$this->__getNombre()}',`password`='{$this->__getPasswor()}',`loginStatus`='{$this->__getLoginStatus()}',`registerDate`='{$this->__getDia()}' WHERE `userId`='{$this->__getId()}'";
+        $this->con->consultaSimple($sql);
+    }
+    
+    public function all(){
+        $sql = "SELECT * FROM usuarios";
+        $resultados = $this->con->consultaRetorno($sql);
+        return $resultados;
     }
 
     

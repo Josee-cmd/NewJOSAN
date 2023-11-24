@@ -48,6 +48,11 @@ class Enrutador
                 echo "<script>
                 location.href = `../View/sign up.Medico.php`;
                 </script>";
+            case 'DatosEspecifico':
+                echo "<script>
+                location.href = `../View/DatosEspecifico.php`;
+                </script>";
+                break;
             default:
                 echo "<script>
                 location.href = `../View/error.php`;

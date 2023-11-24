@@ -8,9 +8,13 @@ class controllerUser
     {
         $this->user = new usuarios();
     }
+    public function index()
+    {
+        $resultado = $this->user->all();
+        return $resultado;
+    }
 
-
-    public function Create($id, $nombre,$password,$loginStatus, $dia)
+    public function Create($id, $nombre, $password, $loginStatus, $dia)
     {
         $this->user->__setID($id);
         $this->user->__setNombre($nombre);
@@ -26,5 +30,12 @@ class controllerUser
         } else {
             return "Error: \$this->user no es una instancia válida de la clase Medico.";
         }
+    }
+
+    public function ver($id)
+    {
+        $this->user->__setID($id);
+        $datos = $this->user->show();
+        return $datos;
     }
 }
