@@ -9,19 +9,13 @@ class Paciente {
     private string $email;
     private string $telefono;
     private int $edad;
-    private DateTime $fecha;
+    private string $fecha;
     private $con;
     // Constructor que puede recibir parámetros para inicializar los atributos
-    public function __construct($IdPaceinte,$nombre,$apellido,$email,$telefono,$edad, $fecha)
+    public function __construct()
     {
         $this->con = new Conexion();
-        $this->Id_paciente = $IdPaceinte;
-        $this->nombre = $nombre;
-        $this->apellido = $apellido;
-        $this->email = $email;
-        $this->telefono = $telefono;
-        $this->edad = $edad;
-        $this->fecha = $fecha;
+
     }
     // Getter para obtener el valor de los atributos de la clase "Paciente"
     public function __getIdPaciente(): int
@@ -53,7 +47,7 @@ class Paciente {
         return $this->edad;
     }
 
-    public function __getFecha(): DateTime
+    public function __getFecha(): string
     {
         return $this->fecha;
     }
@@ -90,10 +84,35 @@ class Paciente {
         $this->edad = $edad;
     }
 
-    public function __setFecha(DateTime $fecha): void
+    public function __setFecha(string $fecha): void
     {
         $this->fecha = $fecha;
     }
+
+
+
+    //Insertar un nuevo paciente en la base de datos
+    public function Insert() {
+        // Utilizar el getter para obtener el valor de la cédula
+        $sqlId = "SELECT * FROM paciente WHERE Id_paciente ='{$this->__getIdPaciente()}'";
+        $resultado = $this->con->consultaRetorno($sqlId);
+        $num = mysqli_num_rows($resultado);
+    
+        if ($num == 0) {
+            // La cédula no existe, podemos proceder con la inserción
+            $secondSql = "INSERT INTO `paciente`(`Id_paciente`, `nombre`, `apellido`, `email`, `telefono`, `edad`, `fecha_nacimiento`) VALUES
+            ('{$this->__getIdPaciente()}','{$this->__getNombre()}','{$this->__getApellido()}','{$this->__getEmail()}','{$this->__getTelefono()}','{$this->__getEdad()}','{$this->__getFecha()}')";
+    
+            $this->con->consultaSimple($secondSql);
+            echo "<script>
+            location.href = `../View/sign up-tratamiento.php`;
+            </script>";
+        } else {
+            // La cédula ya existe
+            echo "La cédula ya existe en la base de datos.";
+        }
+    }
+    
     //Metodos-Funciones que contedra esta clase
     public function __ModificarDatosPersonales()
     {
@@ -115,23 +134,5 @@ class Paciente {
     {
     }
 
-    public function __MostrarDatos(): void
-    {
-        // Imprimir los datos específicos de la clase Paciente
-        echo "<br><br>" . 'Datos de la clase Paciente' . "<br><br>";
-        echo $this->Id_paciente . " " . "<br>" .
-            $this->nombre . " " . "<br>" .
-            $this->apellido . " " . "<br>" .
-            $this->email . " " . "<br>" .
-            $this->telefono . " " . "<br>" .
-            $this->edad . " " . "<br>" .
-            $this->fecha->format('Y-m-d H:i:s');  // Formatear el objeto DateTime a una cadena
-    }
+   
 }
-//Inicializar con la fecha y hora actual
-$fechaEspecifica = new DateTime('2023-11-19 12:30:00');
-// Crear una instancia de la clase Paciente
-$nuevoPaciente = new Paciente( 1, "Jose", "Salcedo", "josesslcedo", "3043059", 20, $fechaEspecifica);
-
-//Mostramos todos los datos instanciados de la clase "Paciente"
-echo $nuevoPaciente->__MostrarDatos();

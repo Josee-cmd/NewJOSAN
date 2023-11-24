@@ -4,7 +4,6 @@ include_once("Conexion.php");
 class medico
 {
     //Atributos de la clase
-    private int $cedula;
     private int $Id_medio;
     private string $nombre;
     private string $apellido;
@@ -12,6 +11,8 @@ class medico
     private int $edad;
     private string $especialidad;
     private string $telefono;
+    private string $cedula;
+
     private $con;
     // Constructor que puede recibir parámetros para inicializar la conexion
     public function __construct()
@@ -19,7 +20,7 @@ class medico
         $this->con = new Conexion();
     }
     //Getter para obtenet el valor de los atributos de la clase "Medico"
-    public function __getCedula(): int
+    public function __getCedula(): string
     {
         return $this->cedula;
     }
@@ -39,21 +40,21 @@ class medico
     {
         return $this->email;
     }
-    // public function __getEdad(): int
-    // {
-    //     return $this->edad;
-    // }
-    // public function __getEspecialidad(): string
-    // {
-    //     return $this->especialidad;
-    // }
-    // public function __getTelefono(): string
-    // {
-    //     return $this->telefono;
-    // }
+    public function __getEdad(): int
+    {
+        return $this->edad;
+    }
+    public function __getEspecialidad(): string
+    {
+        return $this->especialidad;
+    }
+    public function __getTelefono(): string
+    {
+        return $this->telefono;
+    }
 
     //Settter para modificar el valor de los atributos de la clase "Medico"
-    public function __setCedula(int $cedula): void
+    public function __setCedula(string $cedula): void
     {
         $this->cedula = $cedula;
     }
@@ -73,35 +74,36 @@ class medico
     {
         $this->email = $email;
     }
-    // public function __setEdad(int $edad): void
-    // {
-    //     $this->edad = $edad;
-    // }
-    // public function __setTelefono(string $telefono): void
-    // {
-    //     $this->telefono = $telefono;
-    // }
-    // public function __setEspecialidad(string $especialidad): void
-    // {
-    //     $this->especialidad = $especialidad;
-    // }
+    public function __setEdad(int $edad): void
+    {
+        $this->edad = $edad;
+    }
+    public function __setTelefono(string $telefono): void
+    {
+        $this->telefono = $telefono;
+    }
+    public function __setEspecialidad(string $especialidad): void
+    {
+        $this->especialidad = $especialidad;
+    }
 
 
-    //Insertar un nuevo Medico al Sistema
+    // Insertar un nuevo Medico al Sistema
     public function Insert() {
         // Utilizar el getter para obtener el valor de la cédula
-        $sqlCedula = "SELECT * FROM medico WHERE cedula='{$this->__getCedula()}'";
-        $resultado = $this->con->consultaRetorno($sqlCedula);
+        $sqlId = "SELECT * FROM medico WHERE idMedico ='{$this->__getId()}'";
+        $resultado = $this->con->consultaRetorno($sqlId);
         $num = mysqli_num_rows($resultado);
     
         if ($num == 0) {
             // La cédula no existe, podemos proceder con la inserción
-            $secondSql = "INSERT INTO medico (`cedula`, `id`,`nombre`, `apellido`, `email`) VALUES (
-                '{$this->__getCedula()}', '{$this->__getID()}', '{$this->__getNombre()}', '{$this->__getApellido()}',
-                '{$this->__getEmail()}')";
+            $secondSql = "INSERT INTO `medico`(`idMedico`, `nombre`, `apellido`, `email`, `edad`, `especialidad`, `telefono`, `cedula`) VALUES
+             ('{$this->__getId()}','{$this->__getNombre()}','{$this->__getApellido()}','{$this->__getEmail()}','{$this->__getEdad()}','{$this->__getEspecialidad()}','{$this->__getTelefono()}','{$this->__getCedula()}')";
     
             $this->con->consultaSimple($secondSql);
-            echo "Inserción exitosa.";
+            echo "<script>
+            location.href = `../View/Exitoso.php`;
+            </script>";
         } else {
             // La cédula ya existe, manejar según tus necesidades
             echo "La cédula ya existe en la base de datos.";

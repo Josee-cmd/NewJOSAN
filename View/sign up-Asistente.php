@@ -1,3 +1,18 @@
+<?php
+include_once("../Model/Controller/controllerAsistente.php");
+$controlador = new controllerAsistente();
+if (isset($_POST['enviar'])) {
+    $r = $controlador->Create($_POST['id'], $_POST['nombre'], $_POST['apellido'], $_POST['edad'], $_POST['email'], $_POST['telefono']);
+    if ($r) {
+        return;
+    } else {
+        echo "Ya el usuario se encuentra registrado";
+    }
+}
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,9 +36,9 @@
     <div class="logo">
         <img src="../Icons/JOSAN.png" alt="url no encontrada :(">
     </div>
-    <form action="" class="form">
+    <form action="" method="POST" class="form">
         <div class="div">
-            <input type="email" required>
+            <input type="text" required autocomplete="off" name = "id">
             <label class="lbl-id">
                 <span class="text-id">
                     Identificacion del paciente
@@ -32,7 +47,7 @@
         </div>
         <!-------->
         <div class="div">
-            <input type="email" required>
+            <input type="text" required autocomplete="off" name = "nombre">
             <label class="lbl">
                 <span class="text-nombre">
                     Nombre
@@ -41,7 +56,7 @@
         </div>
         <!-------->
         <div class="div">
-            <input type="password" required>
+            <input type="text" required autocomplete="off" name = "apellido">
             <label class="lbl-apellido">
                 <span class="text-apellido">
                     Apellido
@@ -50,7 +65,7 @@
         </div>
         <!-------->
         <div class="div">
-            <input type="password" required>
+            <input type="email" required autocomplete="off" name = "email">
             <label class="lbl-email">
                 <span class="text-email">
                     Email
@@ -60,7 +75,7 @@
 
         <!------->
         <div class="div">
-            <input type="number" required>
+            <input type="number" required autocomplete="off" name = "edad">
             <label class="lbl-edad">
                 <span class="text-edad">
                     Edad
@@ -71,7 +86,7 @@
         <!---->
 
         <div class="div">
-            <input type="number" class="lbl-phone" required id = "input-phone">
+            <input type="text" class="lbl-phone" required id = "input-phone" autocomplete="off" name = "telefono">
             <label class="lbl-phone">
                 <span class="text-phone">
                     Telefono
@@ -88,7 +103,7 @@
         <div class="google">
             <a href="https://www.google.com/?hl=es"><img src="../Icons/google.png" alt="">Continua con Google</a>
         </div>
-        <button type="submit">Regístrate</button>
+        <button type="submit" name = "enviar">Regístrate</button>
     </form>
 
     <script src = "../Model/JS/sign up paciente.js"> </script>

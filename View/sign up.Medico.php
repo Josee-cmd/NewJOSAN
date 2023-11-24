@@ -1,15 +1,17 @@
- <?php
-include_once("../Model/Controller/controllerUser.php");
-$controlador = new controllerUser();
+<?php
+include_once("../Model/Controller/controller.php");
+$controlador = new controllerMedico();
 if (isset($_POST['enviar'])) {
-    $r = $controlador->Create($_POST['id'],$_POST['nombre'],$_POST['password'],$_POST['status'],$_POST['fecha']);
+    $r = $controlador->Create($_POST['id'],$_POST['nombre'],$_POST['apellido'],$_POST['email'],$_POST['edad'],$_POST['espe'],$_POST['telefono'],$_POST['cedula']);
     if($r){
        return;
     }else{
         echo "Ya el usuario se encuentra registrado";
     }
 }
-?>  
+?> 
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -19,7 +21,7 @@ if (isset($_POST['enviar'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sing up</title>
     <link rel="icon" href="../Icons/LOGO JOSAN NUEVA VERSION.png">
-    <link rel="stylesheet" href="Css/sign up.css">
+    <link rel="stylesheet" href="Css/sign upMedico.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter&family=Wix+Madefor+Text:wght@500&display=swap" rel="stylesheet">
@@ -27,7 +29,7 @@ if (isset($_POST['enviar'])) {
 
 <body>
     <header class="header">
-        <h1>Regístrate</h1>
+        <h1>Continuemos con tu registro...</h1>
         <h5>¿Ya tienes una cuenta? <a href="sign in.php">Inicia sesión</a></h5>
     </header>
     <div class="logo">
@@ -37,44 +39,71 @@ if (isset($_POST['enviar'])) {
         <div class="div">
             <input type="text" required name="id" autocomplete="off">
             <label class="lbl-id">
-                <span class="text-nombre">
-                    Nuevo id del usuario
+                <span class="text-id">
+                   Ingresa tu <b>ID</b> de Medico
                 </span>
             </label>
         </div>
           <!-------->
           <div class="div">
             <input type="text" required name="nombre"autocomplete="off">
-            <label class="lbl-user">
-                <span class="text-email">
-                    Nombre de Usuario
+            <label class="lbl-nombre">
+                <span class="text-nombre">
+                    Nombre
                 </span>
             </label>
         </div>
         <!-------->
         <div class="div">
-            <input type="password" required name="password"autocomplete="off">
+            <input type="text" required name="apellido"autocomplete="off">
             <label class="lbl">
-                <span class="text-email">
-                    Contraseña
+                <span class="text-apellido">
+                    Apellido
                 </span>
             </label>
         </div>
         <!-------->
         <div class="div">
-            <input type="text" required name="status"autocomplete="off">
-            <label class="lbl-estado">
-                <span class="text-contra">
-                    Estado del login
+            <input type="email" required name="email"autocomplete="off">
+            <label class="lbl-email">
+                <span class="text-email">
+                    Email
                 </span>
             </label>
         </div>
-         <!---->
-         <div class="div">
-            <input type="date" class="datepicker" required id="input-date" autocomplete = "off" name = "fecha">
-            <label class="lbl-fecha">
-                <span class="text-fechaNacimiento">
-                    Fecha de Nacimiento
+        <!-------->
+        <div class="div">
+            <input type="text" required name="edad"autocomplete="off">
+            <label class="lbl-edad" >
+                <span class="text-email">
+                    Edad
+                </span>
+            </label>
+        </div>
+           <!-------->
+           <div class="div">
+            <input type="text" required name="espe"autocomplete="off">
+            <label class="lbl-especialidad" >
+                <span class="text-email">
+                    Especialidad
+                </span>
+            </label>
+        </div>
+           <!-------->
+           <div class="div">
+            <input type="text" required name="telefono"autocomplete="off">
+            <label class="lbl-telefono" >
+                <span class="text-email">
+                    Telefono
+                </span>
+            </label>
+        </div>
+           <!-------->
+           <div class="div">
+            <input type="text" required name="cedula"autocomplete="off">
+            <label class="lbl-cedula" >
+                <span class="text-email">
+                    Cedula
                 </span>
             </label>
         </div>
@@ -91,7 +120,6 @@ if (isset($_POST['enviar'])) {
         </div>
         <button type="submit" name="enviar">Regístrate</button>
     </form>
-    <script src = "../Model/JS/sign up.js"></script>
 </body>
 
 </html>

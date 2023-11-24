@@ -1,29 +1,28 @@
 <?php
+    include_once("Conexion.php");
+
 
 class Asistente
 {
-    private int $IdPaciente;
+    private string $IdAsistente;
     private string $nombre;
     private string $apellido;
     private int $edad;
     private string $email;
     private string $telefono;
 
-    // Constructor que puede recibir parámetros para inicializar los atributos de la clase "Asistente"
-    public function __construct(int $id, string $nombre, string $apellido, int $edad, string $email, string $telefono)
+    private $con;
+    // Constructor que puede recibir parámetros para inicializar los atributos
+    public function __construct()
     {
-        $this->IdPaciente = $id;
-        $this->nombre = $nombre;
-        $this->apellido = $apellido;
-        $this->edad = $edad;
-        $this->email = $email;
-        $this->telefono = $telefono;
+        $this->con = new Conexion();
+
     }
 
     //Getter para obtener el valor de los atributos de la clase "Asistente"
-    public function __getIdPaciente(): int
+    public function __getIdAsistente(): string
     {
-        return $this->IdPaciente;
+        return $this->IdAsistente;
     }
     public function __getNombre(): string
     {
@@ -51,9 +50,9 @@ class Asistente
     }
 
     //Setter para modificar el valor de los atributos de la clase "Asistente
-    public function __setId(int $id): void
+    public function __setId(string $id): void
     {
-        $this->IdPaciente = $id;
+        $this->IdAsistente = $id;
     }
 
     public function __setNombre(string $nombre): void
@@ -79,6 +78,31 @@ class Asistente
     public function __setTelefono(string $telefono):void{
         $this->telefono = $telefono;
     }
+
+    
+    //Insertar un nuevo paciente en la base de datos
+    public function Insert() {
+        // Utilizar el getter para obtener el valor de la cédula
+        $sqlId = "SELECT * FROM paciente WHERE Id_paciente ='{$this->__getIdAsistente()}'";
+        $resultado = $this->con->consultaRetorno($sqlId);
+        $num = mysqli_num_rows($resultado);
+    
+        if ($num == 0) {
+            // La cédula no existe, podemos proceder con la inserción
+            $secondSql = "INSERT INTO `asistente`(`Id_Asistente`, `nombre`, `apellido`, `edad`, `email`, `telefono`) VALUES 
+            ('{$this->__getIdAsistente()}','{$this->__getNombre()}','{$this->__getApellido()}','{$this->__getEdad()}','{$this->__getEmail()}','{$this->__getTelefono()}')";
+    
+            $this->con->consultaSimple($secondSql);
+            echo "<script>
+            location.href = `../View/Exitoso.php`;
+            </script>";
+        } else {
+            // La cédula ya existe
+            echo "La cédula ya existe en la base de datos.";
+        }
+    }
+    
+
 
     //Metodos y funciones de la clase Asistente
     public  function __ConsultarTratamiento()

@@ -21,17 +21,17 @@ class Enrutador
                 break;
             case 'sign in':
                 echo "<script>
-                location.href = `../View/sing in.html`;
+                location.href = `../View/sign in.php`;
                 </script>";
                 break;
             case 'sign up-Asistente':
                 echo "<script>
-                location.href = `../View/sign up-Asistente.html`;
+                location.href = `../View/sign up-Asistente.php`;
                 </script>";
                 break;
             case 'sign up-paciente':
                 echo "<script>
-                location.href = `../View/sign up-paciente.html`;
+                location.href = `../View/sign up-paciente.php`;
                 </script>";
                 break;
             case 'sign up-tratamiento':
@@ -44,9 +44,14 @@ class Enrutador
                 location.href = `../View/sign up.php`;
                 </script>";
                 break;
+            case 'sign upMedico':
+                echo "<script>
+                location.href = `../View/sign up.Medico.php`;
+                </script>";
             default:
-                include_once('../View/error.php');
-                break;
+                echo "<script>
+                location.href = `../View/error.php`;
+                </script>";                break;
         endswitch;
     }
     public function __Validrget($view)
@@ -55,7 +60,7 @@ class Enrutador
             return true; // La variable $view tiene un valor, permite la carga de la vista correspondiente.
         } else {
             include_once('../View/index.php'); // La variable $view está vacía, carga la vista de inicio de sesión.
-            return false; // Puedes decidir si quieres devolver true o false en este caso, según tus necesidades.
+            return false; 
         }
     }
 }

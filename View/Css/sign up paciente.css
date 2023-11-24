@@ -119,7 +119,14 @@ form>label {
     color: #757575;
     font-size: 18px;
 }
-
+.div>.lbl-telefono {
+    position: absolute;
+    right: 85.5%;
+    top: 24%;
+    transition: 0.25s;
+    color: #757575;
+    font-size: 18px;
+}
 #input-date {
     position: relative;
     width: 10%;

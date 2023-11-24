@@ -1,3 +1,18 @@
+<?php
+include_once("../Model/Controller/controllerTratamiento.php");
+$controlador = new controllerTratamiento();
+if (isset($_POST['enviar'])) {
+    $r = $controlador->Create($_POST['nombre'],$_POST['id'],$_POST['descripcion'],$_POST['inicio'],$_POST['final'],$_POST['dosificacion']);
+    if($r){
+       return;
+    }else{
+        echo "Ya el usuario se encuentra registrado";
+    }
+}
+?>  
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,9 +36,9 @@
     <div class="logo">
         <img src="../Icons/JOSAN.png" alt="url no encontrada :(">
     </div>
-    <form action="" class="form">
+    <form action="" method="POST" class="form">
         <div class="div">
-            <input type="number" required>
+            <input type="number" required autocomplete="off" name = "id">
             <label class="lbl-id">
                 <span class="text-id">
                     ID del tratamiento
@@ -32,7 +47,7 @@
         </div>
         <!-------->
         <div class="div">
-            <input type="text" required>
+            <input type="text" required autocomplete="off" name = "nombre">
             <label class="lbl">
                 <span class="text-nombre">
                     Nombre
@@ -41,7 +56,7 @@
         </div>
         <!-------->
         <div class="div">
-            <input type="date" required id = "input-date">
+            <input type="date" required id = "input-date" autocomplete="off" name = "inicio">
             <label class="lbl-fecha">
                 <span class="text-fecha">
                     Fecha de inicio 
@@ -50,7 +65,7 @@
         </div>
         <!-------->
         <div class="div">
-            <input type="date" required id = "input2-date">
+            <input type="date" required id = "input2-date" autocomplete="off" name = "final">
             <label class="lbl-date">
                 <span class="text-date">
                     Fecha final 
@@ -60,7 +75,7 @@
 
         <!------->
         <div class="div">
-            <input type="text" required>
+            <input type="text" required autocomplete="off" name = "dosificacion">
             <label class="lbl-dosificacion">
                 <span class="text-dosificacion">
                     Dosificacion
@@ -71,7 +86,7 @@
         <!---->
 
         <div class="div">
-            <input type="text" class="" required id = "input-descripcion">
+            <input type="text" class="" required id = "input-descripcion" autocomplete="off" name = "descripcion">
             <label class="lbl-descripcion">
                 <span class="text-descripcion">
                     Descripcion
@@ -88,7 +103,7 @@
         <div class="google">
             <a href="https://www.google.com/?hl=es"><img src="../Icons/google.png" alt="">Continua con Google</a>
         </div>
-        <button type="submit">Regístrate</button>
+        <button type="submit" name = "enviar">Regístrate</button>
     </form>
 
     <script src = "../Model/JS/sign up tratameinto.js"> </script>

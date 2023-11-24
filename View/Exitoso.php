@@ -1,9 +1,8 @@
 <html>
 
 <head>
-    <title>Error 404</title>
+    <title>Exitoso</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter&family=Wix+Madefor+Text:wght@500&display=swap" rel="stylesheet">
-    <link rel="icon" href="../Icons/Error-404.jpeg">
 </head>
 <style>
     * {
@@ -12,7 +11,7 @@
     }
 
     body {
-        background-color: rgb(242, 242, 242);
+        background-color: rgb(242, 242, 242)  ;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -25,21 +24,33 @@
     }
 
     .Error>img {
-        width: 50%;
+        width: 80%;
+        height: 80%;
         margin: auto;
         display: block;
+        border-radius: 80%;
+        background-position: center;
     }
 
     .Error>h3 {
         margin-top: 20px;
         font-weight: 100;
     }
+
+    a{
+        color: #000;
+        text-decoration: none;
+    }
+    a:hover{
+        color: rgb(38, 166, 154);
+        text-decoration: underline;
+    }
 </style>
 
 <body>
     <div class="Error">
-        <img src="../Icons/Error-404.jpeg" alt="">
-        <h3>Creo que tomaste el camino equivocado. Volvamos.</h3>
+        <img src="../Icons/Exitoso.jpeg" alt="">
+        <h3>Vas por el camino correcto. <a href = "personal area.html">Sigamos</a></h3>
     </div>
 
 </body>

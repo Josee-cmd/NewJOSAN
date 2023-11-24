@@ -4,7 +4,9 @@ const services = document.querySelector('#services'),
     submenus = document.querySelector('.submenus'),
     sub = document.querySelector('#sub'),
     menu = document.querySelector('#menu'),
-    navigation = document.querySelector('.navigation');
+    navigation = document.querySelector('.navigation'),
+    item1 = document.querySelector('.items-1'),
+    item2 = document.querySelector('.items-2');
 function mostrarFotos(n) {
     index = (index + n + cantidadFotos) % cantidadFotos;
     console.log(index)
@@ -38,3 +40,11 @@ services.addEventListener('click', () => {
 menu.addEventListener('click', () => {
     navigation.classList.toggle('showNavigation')
 })
+
+item1.addEventListener('click',()=>{
+    location.href = '../View/sign up-paciente.php';
+});
+
+item2.addEventListener('click',()=>{
+    location.href = '../View/sign up-tratamiento.php';
+});

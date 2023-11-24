@@ -1,3 +1,17 @@
+<?php
+include_once("../Model/Controller/controllerPaciente.php");
+$controlador = new controllerPaciente();
+if (isset($_POST['enviar'])) {
+    $r = $controlador->Create($_POST['id'], $_POST['nombre'], $_POST['apellido'], $_POST['email'], $_POST['telefono'], $_POST['edad'], $_POST['fecha']);
+    if ($r) {
+        return;
+    } else {
+        echo "Ya el usuario se encuentra registrado";
+    }
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,10 +23,9 @@
     <link rel="stylesheet" href="Css/sign up paciente.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter&family=Wix+Madefor+Text:wght@500&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter&family=Wix+Madefor+Text:wght@500&display=swap" rel="stylesheet">
 
-    </head>
+</head>
 
 <body>
     <header class="header">
@@ -21,9 +34,9 @@
     <div class="logo">
         <img src="../Icons/JOSAN.png" alt="url no encontrada :(">
     </div>
-    <form action="" class="form">
+    <form action="" method="POST" class="form">
         <div class="div">
-            <input type="email" required>
+            <input type="text" required autocomplete="off" name="id">
             <label class="lbl-id">
                 <span class="text-id">
                     Identificacion del paciente
@@ -32,7 +45,7 @@
         </div>
         <!-------->
         <div class="div">
-            <input type="email" required>
+            <input type="text" required autocomplete="off" name="nombre">
             <label class="lbl">
                 <span class="text-nombre">
                     Nombre
@@ -41,7 +54,7 @@
         </div>
         <!-------->
         <div class="div">
-            <input type="password" required>
+            <input type="text" required autocomplete="off" name="apellido">
             <label class="lbl-apellido">
                 <span class="text-apellido">
                     Apellido
@@ -50,17 +63,27 @@
         </div>
         <!-------->
         <div class="div">
-            <input type="password" required>
+            <input type="text" required autocomplete="off" name="email">
             <label class="lbl-email">
                 <span class="text-email">
                     Email
                 </span>
             </label>
         </div>
-
         <!------->
         <div class="div">
-            <input type="number" required>
+            <input type="text" required autocomplete="off" name = "telefono">
+            <label class="lbl-telefono">
+                <span class="text-telefono">
+                    Telefono
+                </span>
+            </label>
+        </div>
+
+        <!---->
+        <!------->
+        <div class="div">
+            <input type="text" required autocomplete="off" name = "edad">
             <label class="lbl-edad">
                 <span class="text-edad">
                     Edad
@@ -71,7 +94,7 @@
         <!---->
 
         <div class="div">
-            <input type="date" class="datepicker" required id = "input-date">
+            <input type="date" class="datepicker" required id="input-date" autocomplete = "off" name = "fecha">
             <label class="lbl-fecha">
                 <span class="text-fechaNacimiento">
                     Fecha de Nacimiento
@@ -88,10 +111,10 @@
         <div class="google">
             <a href="https://www.google.com/?hl=es"><img src="../Icons/google.png" alt="">Continua con Google</a>
         </div>
-        <button type="submit">Regístrate</button>
+        <button type="submit" name = "enviar">Regístrate</button>
     </form>
 
-    <script src = "../Model/JS/sign up paciente.js"> </script>
+    <script src="../Model/JS/sign up paciente.js"> </script>
 </body>
 
 </html>

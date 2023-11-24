@@ -62,117 +62,139 @@ form>label {
     outline: 0px;
     border-bottom: 1px solid rgb(38, 166, 154);
     ;
+    ;
 }
 
 .div>.lbl-id {
     position: absolute;
-    right: 82.5%;
+    right: 86%;
     top: 24%;
     transition: 0.25s;
     color: #757575;
-    font-size: 18px;
-}
 
-.div>.lbl-email {
-    position: absolute;
-    right: 95.5%;
-    top: 24%;
-    transition: 0.25s;
-    color: #757575;
-    font-size: 18px;
 }
 
 .div>.lbl {
     position: absolute;
-    right: 94%;
+    right: 94.5%;
     top: 24%;
     transition: 0.25s;
     color: #757575;
-    font-size: 18px;
 
 }
 
-.div>.lbl-apellido {
+.div>.lbl-nombre {
     position: absolute;
-    right: 93.7%;
+    right: 94.8%;
     top: 24%;
     transition: 0.25s;
     color: #757575;
-    font-size: 18px;
+
 }
 
+.div>.lbl-email {
+    position: absolute;
+    right: 96%;
+    top: 24%;
+    transition: 0.25s;
+    color: #757575;
+
+}
+
+.div>.lbl-especialidad {
+    position: absolute;
+    right: 92%;
+    top: 24%;
+    transition: 0.25s;
+    color: #757575;
+}
 .div>.lbl-edad {
     position: absolute;
-    right: 95.7%;
+    right: 96.2%;
     top: 24%;
     transition: 0.25s;
     color: #757575;
-    font-size: 18px;
 }
-
-
-#input-telefono {
+.div>.lbl-telefono {
+    position: absolute;
+    right: 94.5%;
+    top: 24%;
+    transition: 0.25s;
+    color: #757575;
+}
+.div>.lbl-cedula {
+    position: absolute;
+    right: 95.4%;
+    top: 24%;
+    transition: 0.25s;
+    color: #757575;
+}
+#input-date,
+#input2-date {
     position: relative;
-    width: 25%;
-    left: 0%;
+    width: 15%;
+    left: 11%;
     bottom: 8px;
+    transition: .3s;
 }
 
-form input:focus+.lbl-email,
-form input:valid+.lbl-email {
-    transform: translateY(-150%);
-    right: 97%;
+form input:focus+.lbl-date,
+form input:valid+.lbl-date {
+    right: 94.1%;
     font-size: 14px;
     color: rgb(38, 166, 154);
+
 }
 
 form input:focus+.lbl,
 form input:valid+.lbl {
     transform: translateY(-150%);
-    right: 96%;
-    font-size: 14px;
-    color: rgb(38, 166, 154);
-}
-
-form input:focus+.lbl-edad,
-form input:valid+.lbl-edad {
-    transform: translateY(-150%);
-    right: 97%;
-    font-size: 14px;
-    color: rgb(38, 166, 154);
-}
-
-form input:focus+.lbl-apellido,
-form input:valid+.lbl-apellido {
-    transform: translateY(-150%);
     right: 95.5%;
     font-size: 14px;
     color: rgb(38, 166, 154);
+
+}
+
+form input:focus+.lbl-dosificacion,
+form input:valid+.lbl-dosificacion {
+    transform: translateY(-150%);
+    right: 93.5%;
+    font-size: 14px;
+    color: rgb(38, 166, 154);
+
+}
+
+form input:focus+.lbl-fecha,
+form input:valid+.lbl-fecha {
+    right: 92%;
+    font-size: 14px;
+    color: rgb(38, 166, 154);
+
 }
 
 form input:focus+.lbl-id,
 form input:valid+.lbl-id {
     transform: translateY(-150%);
-    right: 86.5%;
+    right: 90.5%;
     font-size: 14px;
     color: rgb(38, 166, 154);
+
 }
 
-form input:focus+.lbl-telefono,
-form input:valid+.lbl-telefono {
+form input:focus+.lbl-descripcion,
+form input:valid+.lbl-descripcion {
     transform: translateY(-150%);
-    right: 95.5%;
+    right: 93.5%;
     font-size: 14px;
-    color: rgb(38, 166, 154);
 }
 
 .line {
     position: absolute;
     width: 0px;
-    height: 180px;
+    height: 200px;
     border: 1px solid rgb(38, 166, 154);
     left: 30%;
-    bottom: 212px;
+    bottom: 80px;
 }
 
 .circle {
@@ -182,16 +204,17 @@ form input:valid+.lbl-telefono {
     border: 2px solid rgb(38, 166, 154);
     border-radius: 60px;
     left: 29.5%;
-    bottom: 200px;
+    bottom: 280px;
+    background-color: #fff;
 }
 
 .line2 {
     position: absolute;
     width: 0px;
-    height: 150px;
+    height: 200px;
     border: 1px solid rgb(38, 166, 154);
     left: 30%;
-    bottom: 50px;
+    top: 88px;
 }
 
 .linkFace {
@@ -213,7 +236,6 @@ form input:valid+.lbl-telefono {
     position: relative;
     bottom: 5px;
     color: #000;
-    font-size: 18px;
     text-decoration: none;
     font-size: 14px;
 
@@ -235,7 +257,7 @@ form input:valid+.lbl-telefono {
     cursor: pointer;
     position: absolute;
     left: 36%;
-    bottom: 30%;
+    bottom: 40%;
     border-radius: 60px;
 }
 
@@ -243,7 +265,6 @@ form input:valid+.lbl-telefono {
     position: relative;
     bottom: 5px;
     color: #000;
-    font-size: 18px;
     text-decoration: none;
     font-size: 14px;
 

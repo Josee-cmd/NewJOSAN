@@ -1,3 +1,7 @@
+<?php
+include_once("../Class/conexion2.php");
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,8 +9,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign in</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter&family=Wix+Madefor+Text:wght@500&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter&family=Wix+Madefor+Text:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="Css/sign in.css">
     <link rel="icon" href="../Icons/LOGO JOSAN NUEVA VERSION.png">
 </head>
@@ -19,9 +22,9 @@
     <div class="logo">
         <img src="../Icons/JOSAN.png" alt="No funciona la imagen :(">
     </div>
-    <form action="" class="form">
+    <form action="" method="POST" class="form">
         <div class="div">
-            <input type="email" required>
+            <input type="text" required name="nombre">
             <label class="lbl-email">
                 <span class="text-nombre">
                     Email
@@ -30,7 +33,7 @@
         </div>
         <!------>
         <div class="div">
-            <input type="password" required>
+            <input type="password" required name="password">
             <label class="lbl-password">
                 <span class="text-nombre">
                     Escriba su contraseña
@@ -54,10 +57,9 @@
         <div class="google">
             <a href="https://www.google.com/?hl=es"><img src="../Icons/google.png" alt="">Continua con Google</a>
         </div>
-        <button type="submit" id = "next">Continuar</button>
+        <button type="submit" id="next" name="enviar">Continuar</button>
 
     </form>
-    <script src = "../Model/JS/sing -in.js"></script>
 </body>
 
 </html>

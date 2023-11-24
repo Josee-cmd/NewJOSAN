@@ -294,6 +294,7 @@ input[type="text"] {
     z-index: 0;
     border-radius: 15px;
     background-size: contain;
+    cursor: pointer;
 }
 
 .items-1 {
